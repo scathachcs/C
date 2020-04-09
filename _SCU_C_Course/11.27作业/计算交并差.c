@@ -1,0 +1,90 @@
+#include<stdio.h>
+#include<string.h> 
+int main ()
+{
+	int i,j,k,g=0,h,l,n,m;
+	char a[100],b[100],c[100],d[100];
+	char x; 
+	gets(a);
+	gets(b);
+	n=strlen(a);
+	m=strlen(b);
+	for(i=0;i<n;i++)
+	{
+	    if(b[0]=='\0')
+     	break;
+	    for(j=0;b[j]!='\0';j++)
+	    {
+	    		if(a[i]==b[j])
+	    		{
+	    			c[k]=a[i];
+	    			k++;
+	    			b[j]='\0';
+	    			x=b[j];
+					b[j]=b[m-k];
+					b[m-k]=x;
+	    			break;
+				}
+				else
+				{
+					if(b[j+1]=='\0')
+					{
+						d[g]=a[i];
+						g++;
+				    }	
+				}
+		}
+	}
+	if(b[0]=='\0')
+	{
+		for(;a[i]!='\0';g++)
+		{
+			d[g]=a[i];
+			i++; 
+		} 
+		
+	} 
+	strcat(a,b);
+	for(i=0;i<strlen(a);i++)
+	    {
+		for(j=0;j<(strlen(a)-i-1);j++)
+	    {
+		if(a[j]>a[j+1])
+	    {
+	    	x=a[j];
+	    	a[j]=a[j+1];
+	    	a[j+1]=x;
+		
+		}
+		}
+		}
+	for(i=0;i<strlen(c);i++)
+	    {
+		for(j=0;j<(strlen(c)-i-1);j++)
+	    {
+	    if(c[j]>c[j+1])
+	    {
+	    	x=c[j];
+	    	c[j]=c[j+1];
+	    	c[j+1]=x;
+		}
+	    }
+		}
+	for(i=0;i<strlen(d);i++)
+	    {
+		for(j=0;j<(strlen(d)-i-1);j++)
+	    {
+		if(d[j]>d[j+1])
+	    {
+	    	x=d[j];
+	    	d[j]=d[j+1];
+	    	d[j+1]=x;
+		}
+		}
+		}
+	puts(a);
+	puts(c);
+	puts(d);
+	return 0;
+}
+
